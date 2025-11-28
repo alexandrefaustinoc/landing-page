@@ -25,16 +25,16 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="section-padding bg-dark-surface">
+    <section id="experience" className="section-padding bg-light-surface dark:bg-dark-surface">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Experiência</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">Experiência</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary mx-auto"></div>
         </motion.div>
 
@@ -49,7 +49,7 @@ const Experience = () => {
             <motion.div
               key={exp.id}
               variants={itemVariants}
-              className="relative pl-8 pb-12 last:pb-0"
+              className="relative pl-6 sm:pl-8 pb-8 sm:pb-10 md:pb-12 last:pb-0"
             >
               {/* Timeline Line */}
               {index < experiences.length - 1 && (
@@ -57,31 +57,31 @@ const Experience = () => {
               )}
 
               {/* Timeline Dot */}
-              <div className="absolute left-0 top-2 w-6 h-6 bg-accent-primary rounded-full border-4 border-dark-surface"></div>
+              <div className="absolute left-0 top-2 w-5 h-5 sm:w-6 sm:h-6 bg-accent-primary rounded-full border-4 border-light-surface dark:border-dark-surface"></div>
 
               {/* Content Card */}
-              <div className="bg-dark-card p-6 rounded-lg border border-dark-border hover:border-accent-primary/50 transition-all">
+              <div className="bg-light-card dark:bg-dark-card p-4 sm:p-5 md:p-6 rounded-lg border border-light-border dark:border-dark-border hover:border-accent-primary/50 transition-all">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div className="flex items-center gap-3 mb-2 md:mb-0">
                     <Briefcase className="w-5 h-5 text-accent-primary" />
-                    <h3 className="text-2xl font-bold text-white">{exp.company}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{exp.company}</h3>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-400">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm">{exp.period}</span>
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                    <Calendar className="w-4 h-4 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm">{exp.period}</span>
                   </div>
                 </div>
 
-                <h4 className="text-xl font-semibold text-accent-primary mb-4">{exp.role}</h4>
-                <p className="text-gray-300 mb-6 leading-relaxed">{exp.description}</p>
+                <h4 className="text-lg sm:text-xl font-semibold text-accent-primary mb-3 sm:mb-4">{exp.role}</h4>
+                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">{exp.description}</p>
 
                 {/* Projects */}
                 <div className="mb-6">
-                  <h5 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                    <Code2 className="w-5 h-5 text-accent-primary" />
+                  <h5 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 flex items-center gap-2">
+                    <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent-primary flex-shrink-0" />
                     Projetos em Destaque
                   </h5>
-                  <div className="grid sm:grid-cols-2 gap-2">
+                  <div className="grid sm:grid-cols-2 gap-2 sm:gap-3">
                     {exp.projects.map((project, projectIndex) => (
                       <motion.div
                         key={projectIndex}
@@ -89,7 +89,7 @@ const Experience = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: projectIndex * 0.1 }}
-                        className="flex items-center gap-2 text-gray-400"
+                        className="flex items-center gap-2 text-gray-600 dark:text-gray-400"
                       >
                         <CheckCircle2 className="w-4 h-4 text-accent-primary flex-shrink-0" />
                         <span className="text-sm">{project}</span>
@@ -105,7 +105,7 @@ const Experience = () => {
                     {exp.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-dark-surface text-gray-300 rounded-full text-xs border border-dark-border"
+                        className="px-3 py-1 bg-gray-100 dark:bg-dark-surface text-gray-700 dark:text-gray-300 rounded-full text-xs border border-light-border dark:border-dark-border"
                       >
                         {tech}
                       </span>

@@ -71,9 +71,9 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Conhecimentos Técnicos</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">Conhecimentos Técnicos</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary mx-auto"></div>
         </motion.div>
 
@@ -82,27 +82,27 @@ const Skills = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6"
         >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
-              className="bg-dark-card p-6 rounded-lg border border-dark-border hover:border-accent-primary/50 transition-all"
+              className="bg-light-card dark:bg-dark-card p-4 sm:p-5 md:p-6 rounded-lg border border-light-border dark:border-dark-border hover:border-accent-primary/50 transition-all"
             >
-              <div className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${category.color} mb-4`}>
+              <div className={`inline-flex p-2 sm:p-3 rounded-lg bg-gradient-to-br ${category.color} mb-3 sm:mb-4`}>
                 <div className="text-white">{category.icon}</div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">{category.title}</h3>
-              <div className="space-y-4">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white">{category.title}</h3>
+              <div className="space-y-3 sm:space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 text-sm">{skill.name}</span>
-                      <span className="text-gray-500 text-xs">{skill.level}%</span>
+                      <span className="text-gray-700 dark:text-gray-300 text-sm">{skill.name}</span>
+                      <span className="text-gray-600 dark:text-gray-500 text-xs">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-dark-surface rounded-full h-2">
+                    <div className="w-full bg-gray-200 dark:bg-dark-surface rounded-full h-2">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}

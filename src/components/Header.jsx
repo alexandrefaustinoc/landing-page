@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,33 +38,36 @@ const Header = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-dark-surface/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        isScrolled 
+          ? 'bg-light-surface/95 dark:bg-dark-surface/95 backdrop-blur-md shadow-lg' 
+          : 'bg-transparent'
       }`}
     >
-      <nav className="container-custom section-padding py-4">
+      <nav className="container-custom section-padding py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Nome */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold text-white cursor-pointer"
+            className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white cursor-pointer truncate max-w-[180px] sm:max-w-none"
             onClick={() => scrollToSection('#hero')}
           >
             Alexandre Faustino
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-sm font-medium"
               >
                 {item.name}
               </motion.button>
             ))}
+            <ThemeToggle />
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.05 }}
@@ -76,12 +80,15 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="text-gray-900 dark:text-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -90,13 +97,13 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 space-y-4 pb-4"
+            className="lg:hidden mt-4 space-y-3 pb-4"
           >
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left text-gray-300 hover:text-white transition-colors py-2"
+                className="block w-full text-left text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2"
               >
                 {item.name}
               </button>

@@ -23,15 +23,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-dark-bg border-t border-dark-border py-8">
+    <footer className="bg-light-bg dark:bg-dark-bg border-t border-light-border dark:border-dark-border py-6 sm:py-8">
       <div className="container-custom section-padding">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           {/* Copyright */}
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gray-500 text-sm"
+            className="text-gray-600 dark:text-gray-500 text-xs sm:text-sm text-center sm:text-left"
           >
             © {currentYear} Alexandre Faustino. Todos os direitos reservados.
           </motion.p>
@@ -41,7 +41,7 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4"
+            className="flex items-center gap-3 sm:gap-4"
           >
             {socialLinks.map((social, index) => (
               <motion.a
@@ -51,7 +51,7 @@ const Footer = () => {
                 rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-500 hover:text-accent-primary transition-colors"
+                className="text-gray-600 dark:text-gray-500 hover:text-accent-primary transition-colors"
                 aria-label={social.label}
               >
                 {social.icon}
@@ -64,7 +64,7 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gray-500 text-sm"
+            className="text-gray-600 dark:text-gray-500 text-xs sm:text-sm text-center sm:text-left"
           >
             Feito com <span className="text-accent-primary">React</span> + <span className="text-accent-primary">TailwindCSS</span>
           </motion.p>

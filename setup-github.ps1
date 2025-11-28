@@ -3,7 +3,7 @@
 
 param(
     [Parameter(Mandatory=$true)]
-    [string]$GitHubUsername,
+    [string]$alexandrefaustinoc,
     
     [Parameter(Mandatory=$true)]
     [string]$RepoName

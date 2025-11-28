@@ -42,16 +42,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-dark-surface">
+    <section id="about" className="section-padding bg-light-surface dark:bg-dark-surface">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Sobre Mim</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">Sobre Mim</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary mx-auto"></div>
         </motion.div>
 
@@ -60,20 +60,20 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start md:items-center"
         >
           {/* Text Content */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Sou um profissional da área de tecnologia com mais de 3 anos de experiência atuando em suporte, análise funcional e Qualidade de Software. Hoje trabalho como <span className="text-accent-primary font-semibold">Analista de Testes N2</span> e também lidero o time de QA, sendo responsável pela organização, priorização e direcionamento técnico das entregas de qualidade dentro da empresa.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Minha trajetória começou no suporte técnico, onde desenvolvi um olhar atento para o comportamento do usuário e para a importância de um software confiável. Essa base despertou minha paixão por QA e me motivou a me especializar em testes funcionais, automação (Playwright e Cypress), testes de API e validação de integrações entre sistemas.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Acredito que qualidade é um compromisso diário. Por isso, atuo sempre com foco em clareza, comunicação, melhoria contínua e entrega de valor real para o usuário e para o produto. Meu objetivo é tornar processos mais eficientes, reduzir falhas, fortalecer a colaboração entre áreas e contribuir para produtos cada vez mais estáveis e bem construídos.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Se você deseja alguém comprometido com excelência, evolução constante e resultados consistentes, estou pronto para ajudar.
             </p>
           </motion.div>
@@ -84,17 +84,17 @@ const About = () => {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02, x: 10 }}
-                className="bg-dark-card p-6 rounded-lg border border-dark-border hover:border-accent-primary/50 transition-all"
+                className="bg-light-card dark:bg-dark-card p-4 sm:p-6 rounded-lg border border-light-border dark:border-dark-border hover:border-accent-primary/50 transition-all"
               >
                 <div className="flex items-start gap-4">
                   <div className="text-accent-primary flex-shrink-0 mt-1">
                     {highlight.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                       {highlight.title}
                     </h3>
-                    <p className="text-gray-400">
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
                       {highlight.description}
                     </p>
                   </div>

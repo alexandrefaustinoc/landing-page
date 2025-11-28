@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // Habilita dark mode baseado em classe
   theme: {
     extend: {
       colors: {
@@ -12,6 +13,12 @@ export default {
           surface: '#111111',
           card: '#1a1a1a',
           border: '#2a2a2a',
+        },
+        light: {
+          bg: '#ffffff',
+          surface: '#f8f9fa',
+          card: '#ffffff',
+          border: '#e5e7eb',
         },
         accent: {
           primary: '#3b82f6',

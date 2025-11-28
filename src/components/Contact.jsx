@@ -48,18 +48,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-dark-surface">
+    <section id="contact" className="section-padding bg-light-surface dark:bg-dark-surface">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Contato</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary mx-auto mb-4"></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">Contato</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary mx-auto mb-3 sm:mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
             Estou sempre aberto a novas oportunidades e colaborações. Entre em contato!
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-4xl mx-auto"
         >
           {contacts.map((contact, index) => (
             <motion.a
@@ -79,13 +79,13 @@ const Contact = () => {
               rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="bg-dark-card p-6 rounded-lg border border-dark-border hover:border-accent-primary/50 transition-all text-center group"
+              className="bg-light-card dark:bg-dark-card p-4 sm:p-5 md:p-6 rounded-lg border border-light-border dark:border-dark-border hover:border-accent-primary/50 transition-all text-center group"
             >
-              <div className={`inline-flex p-4 rounded-lg bg-gradient-to-br ${contact.color} mb-4 group-hover:scale-110 transition-transform`}>
+              <div className={`inline-flex p-3 sm:p-4 rounded-lg bg-gradient-to-br ${contact.color} mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
                 <div className="text-white">{contact.icon}</div>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">{contact.label}</h3>
-              <p className="text-gray-400 text-sm">{contact.value}</p>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">{contact.label}</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm break-words">{contact.value}</p>
             </motion.a>
           ))}
         </motion.div>
@@ -96,13 +96,13 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-10 md:mt-12"
         >
           <motion.a
             href="mailto:alexandre.faustino@example.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent-primary to-accent-secondary text-white rounded-lg hover:shadow-lg transition-all font-medium text-lg"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-accent-primary to-accent-secondary text-white rounded-lg hover:shadow-lg transition-all font-medium text-base sm:text-lg"
           >
             <Send className="w-5 h-5" />
             Enviar Mensagem

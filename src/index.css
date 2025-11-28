@@ -4,8 +4,18 @@
 
 @layer base {
   body {
-    @apply bg-dark-bg text-gray-100 antialiased;
+    @apply antialiased;
     font-family: 'Inter', sans-serif;
+  }
+  
+  /* Dark mode styles */
+  .dark body {
+    @apply bg-dark-bg text-gray-100;
+  }
+  
+  /* Light mode styles */
+  .light body {
+    @apply bg-light-bg text-gray-900;
   }
   
   html {
@@ -15,7 +25,7 @@
 
 @layer utilities {
   .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8;
   }
   
   .container-custom {
