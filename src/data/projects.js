@@ -1,0 +1,48 @@
+export const projects = [
+  {
+    id: 1,
+    title: 'Portfolio QA',
+    description: 'Repositório GitHub com projetos de automação, frameworks e documentação técnica sobre QA.',
+    technologies: ['React', 'GitHub', 'Documentação'],
+    link: 'https://github.com/alexandrefaustino',
+    github: 'https://github.com/alexandrefaustino',
+    category: 'Portfolio',
+  },
+  {
+    id: 2,
+    title: 'Framework Selenium/Java',
+    description: 'Framework completo de automação utilizando Selenium WebDriver com Java, incluindo padrões Page Object Model e relatórios automatizados.',
+    technologies: ['Java', 'Selenium', 'TestNG', 'Maven'],
+    link: '#',
+    github: '#',
+    category: 'Automação',
+  },
+  {
+    id: 3,
+    title: 'Framework Cypress/BDD',
+    description: 'Framework de automação E2E utilizando Cypress com BDD (Cucumber + Gherkin), garantindo testes legíveis e manuteníveis.',
+    technologies: ['Cypress', 'Cucumber', 'Gherkin', 'JavaScript'],
+    link: '#',
+    github: '#',
+    category: 'Automação',
+  },
+  {
+    id: 4,
+    title: 'Coleções Postman Avançadas',
+    description: 'Coleções completas de testes de API para integrações com PSPs (PIX, OXXO, Bucks, Paybrokers, BigPag) e sistemas complexos.',
+    technologies: ['Postman', 'REST API', 'Newman', 'CI/CD'],
+    link: '#',
+    github: '#',
+    category: 'API Testing',
+  },
+  {
+    id: 5,
+    title: 'Scripts Python/Selenium',
+    description: 'Automação avançada incluindo 2FA e automação no gestor, com integração de sistemas e análise de resultados.',
+    technologies: ['Python', 'Selenium', '2FA', 'Automação'],
+    link: '#',
+    github: '#',
+    category: 'Automação',
+  },
+];
+
